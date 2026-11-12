@@ -295,6 +295,221 @@ The security purpose is to provide additional assurance before sensitive actions
 **Important:** Having an account in ISC does not automatically make someone an administrator. Administrative access is assigned through appropriate authorisation.
 
 ---
+## 8. Identity Security Cloud Authorisation Levels
+
+Identity Security Cloud uses authorisation levels to control what users can view and which actions they can perform within the platform.
+
+Not every person responsible for administering identity governance needs access to every administrative function. For example, someone managing access certification campaigns does not necessarily need permission to configure application sources.
+
+ISC supports different authorisation levels so organisations can distribute administrative responsibilities without granting every administrator unrestricted access.
+
+This approach supports the **Principle of Least Privilege**: users should receive only the permissions necessary to perform their assigned responsibilities.
+
+### 8.1 Understanding the Authorisation Structure
+
+The two extremes of the authorisation scale are:
+
+- **User:** The lowest and most common level, with no elevated administrative privileges.
+- **Org Admin:** The highest level of customer-facing administrative access, with broad permissions across the tenant.
+
+Between these two levels are specialised administrative authorisations that allow users to manage particular areas of the platform.
+
+An Org Admin can grant specialised administrative permissions according to an individual's responsibilities.
+
+### 8.2 User
+
+The **User** authorisation level is the default level enforced by ISC when a user's authorisation level is undefined.
+
+It is the lowest and most common level of access.
+
+Users do not have elevated administrative permissions. Their activities are generally limited to their own access and assigned responsibilities.
+
+They can perform activities such as:
+
+- Updating their password.
+- Updating their security questions.
+- Updating their phone number.
+- Responding to tasks assigned by another user.
+- Completing tasks assigned through automated ISC processes.
+
+**Example:** An employee receives an access certification task and is asked to review or respond to it. The employee can complete the assigned task without having administrative privileges over the certification system.
+
+**Key point:** A standard User can participate in governance activities without being able to administer the platform.
+
+### 8.3 Org Admin (Organisational Administrator)
+
+In ISC, an organisation's tenant is also referred to as its **Org**.
+
+The Org Admin authorisation level is intended for the organisation's system super users who require broad administrative control over the tenant.
+
+An Org Admin can:
+
+- Visit all customer-accessible screens.
+- Run all customer-accessible commands.
+- View all data across the tenant.
+- Update all data across the tenant.
+- Grant specialised administrative permissions to other users.
+
+The Org Admin has the broadest customer-facing permissions available in ISC.
+
+The User and Org Admin levels represent the two extremes of the authorisation scale.
+
+**Example:** An organisation's primary ISC administrator may be responsible for overall platform administration, assigning specialised administrator permissions, and overseeing the tenant's configuration.
+
+**Key point:** Org Admin access is highly privileged. It should be assigned carefully and only to individuals who genuinely require broad administrative control.
+
+### 8.4 Specialised Administrative Authorisation Levels
+
+An Org Admin can assign specialised administrative permissions to individuals according to their job responsibilities.
+
+These permissions allow administrators to manage specific functional areas without automatically receiving the full range of Org Admin capabilities.
+
+#### A. Help Desk
+
+The **Help Desk** authorisation level is intended for users who support other employees with application account and access-related issues.
+
+Help Desk users can:
+
+- View details of a user's identity.
+- View the user's current permissions.
+- View recent login activity.
+- View changes to a user's account access configuration.
+- Assist with application account issues.
+
+Their identity and activity visibility applies across all identities.
+
+However, Help Desk users cannot make configuration changes to sources, applications, or other ISC features.
+
+**Example:** An employee reports that they cannot access an application. A Help Desk user can inspect the employee's identity details, current permissions, and relevant account activity to help investigate the issue.
+
+**Key distinction:** Help Desk provides support-related visibility and capabilities, not general platform configuration authority.
+
+#### B. Certification Administrator
+
+The **Certification Administrator** authorisation level allows users to:
+
+- Create certification campaigns.
+- Monitor certification campaigns.
+- Manage certification campaigns.
+
+A certification campaign is an organised access review exercise in which assigned reviewers examine users' access and make decisions about whether it should be retained or revoked.
+
+**Example:** An organisation schedules an access review for its Finance department. A Certification Administrator can create and manage the campaign and monitor its progress.
+
+**Key distinction:** Certification Administrators manage the certification process. This does not automatically mean they have unrestricted Org Admin privileges.
+
+#### C. Report Administrator
+
+The **Report Administrator** authorisation level allows users to:
+
+- Search for reports wherever reporting functionality is available.
+- Save reports.
+
+This permission is focused on reporting activities across ISC.
+
+**Example:** An administrator needs to find and save reports to support an internal access governance review.
+
+**Key distinction:** Report Administrator permissions concern report discovery and saving, rather than general tenant or source configuration.
+
+#### D. Role Administrator
+
+The **Role Administrator** authorisation level allows users to:
+
+- Create roles.
+- Manage roles.
+- Edit roles.
+- Search for reports from selected pages.
+- Save reports from selected pages.
+
+Roles are used to organise and manage access according to organisational responsibilities.
+
+**Example:** An administrator responsible for role management can create or modify roles used to represent job functions within the organisation.
+
+**Key distinction:** Role Administrator permissions focus on role management. Their reporting capabilities are more limited in scope than those described for a Report Administrator.
+
+#### E. Source Administrator
+
+The **Source Administrator** authorisation level allows users to:
+
+- Create sources.
+- Configure sources.
+- Manage sources.
+- Edit sources.
+- Manage access profiles.
+
+A source represents a connected application or system from which identity and account information can be collected or to which access-related operations may be performed.
+
+An access profile is a collection of access that can be made available and managed through ISC.
+
+**Example:** An administrator responsible for connecting and maintaining an organisation's application sources may need Source Administrator permissions to configure those sources and manage their access profiles.
+
+**Key distinction:** Source Administrators manage source-related functionality and access profiles, rather than having unrestricted administrative control over the entire tenant.
+
+### 8.5 Comparison of Authorisation Levels
+
+| Authorisation level | Main responsibility | Important permissions |
+|---|---|---|
+| User | Standard platform participation | Manage own permitted information and respond to assigned tasks. |
+| Org Admin | Overall tenant administration | View and update all customer-accessible tenant data and perform all customer-accessible administrative actions. |
+| Help Desk | User and account support | View identity details, permissions, login activity, and access configuration changes. |
+| Certification Administrator | Certification campaign administration | Create, monitor, and manage certification campaigns. |
+| Report Administrator | Reporting | Search and save reports wherever available. |
+| Role Administrator | Role management | Create, manage, and edit roles; search and save reports from selected pages. |
+| Source Administrator | Source and access profile management | Create, configure, manage, and edit sources and access profiles. |
+
+### 8.6 Why Does ISC Separate Administrative Responsibilities?
+
+Consider an organisation with the following team structure:
+
+| Team member | Responsibility | Appropriate authorisation |
+|---|---|---|
+| Platform administrator | Overall ISC administration | Org Admin |
+| IT support specialist | Investigating employee account issues | Help Desk |
+| Identity governance specialist | Managing access review campaigns | Certification Administrator |
+| Compliance reporting specialist | Finding and saving reports | Report Administrator |
+| IAM role specialist | Managing organisational roles | Role Administrator |
+| Application integration specialist | Managing application sources and access profiles | Source Administrator |
+| Employee | Using the platform and responding to assigned tasks | User |
+
+Without specialised authorisation levels, organisations might have to grant broad administrative permissions to people who only need access to one functional area.
+
+Separating responsibilities helps:
+
+- Reduce unnecessary administrative privileges.
+- Limit the impact of accidental or unauthorised changes.
+- Assign platform responsibilities according to job functions.
+- Support the Principle of Least Privilege.
+- Maintain clearer accountability for administrative activities.
+
+### 8.7 Strong Authentication for Privileged Activities
+
+The course also highlights the use of strong authentication for sensitive activities.
+
+Users granted additional administrative permissions, including Org Admin, Source Admin, and Certification Admin, must perform strong authentication to use their new capabilities.
+
+Strong authentication is also required for certain sensitive actions, such as resetting an ISC password or changing personal preferences.
+
+This provides an additional layer of protection before users perform sensitive activities.
+
+**Important distinction:**
+
+- **Authentication** establishes the user's identity.
+- **Authorisation** determines what the authenticated user is allowed to do.
+- **Strong authentication** provides additional assurance when verifying identity for sensitive activities.
+
+### 8.8 Important Concepts to Remember
+
+1. An undefined authorisation level defaults to User.
+2. User is the lowest and most common authorisation level.
+3. Org Admin has the broadest customer-facing administrative access.
+4. Org Admin can assign specialised administrative permissions.
+5. Specialised administrators manage particular functional areas rather than automatically receiving unrestricted tenant access.
+6. Help Desk users can view identity and access activity across identities, but cannot configure sources or applications.
+7. Certification Administrators manage certification campaigns, while Report Administrators focus on finding and saving reports.
+8. Role Administrators manage roles, while Source Administrators manage sources and access profiles.
+9. Strong authentication adds protection to sensitive activities.
+
+**Learning takeaway:** ISC authorisation levels provide a way to distribute administrative responsibilities while controlling how much of the platform each person can access and manage.
 
 ## 9. Putting the Architecture Together
 
