@@ -58,32 +58,23 @@ SailPoint-Identity-Security-Cloud-Learning/
 │
 ├── README.md
 │
-├── 01-Focus-on-Identity-Security-Cloud/
-│   └── README.md
+├── 01-Focus-on-Identity-Security-Cloud.md
+│   
+├── 02-Identity-Security-Cloud-Architecture.md
 │
-├── 02-Identity-Security-Cloud-Architecture/
-│   └── README.md
+├── 03-Identity-Model.md
 │
-├── 03-Identity-Model/
-│   └── README.md
+├── 04-Modeling-Access.md
 │
-├── 04-Modeling-Access/
-│   └── README.md
+├── 05-Access-Requests.md
 │
-├── 05-Access-Requests/
-│   └── README.md
+├── 06-Access-Certification.md
 │
-├── 06-Access-Certification/
-│   └── README.md
+├── 07-Provisioning.md
 │
-├── 07-Provisioning/
-│   └── README.md
+├── 08-Password-Management.md
 │
-├── 08-Password-Management/
-│   └── README.md
-│
-└── 09-Whats-Next/
-    └── README.md
+└── 09-Whats-Next.md
 ```
 
 Each lesson folder will contain its own notes, explanations, examples, and relevant diagrams as the course progresses.
